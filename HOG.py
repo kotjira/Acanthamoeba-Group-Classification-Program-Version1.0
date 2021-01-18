@@ -6,15 +6,10 @@ import copy
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
-import cv2 
 import imutils
 import glob
 import h5py
 import os
-import h5py
-import numpy as np
-import os
-import glob
 import cv2
 import warnings
 from matplotlib import pyplot
@@ -29,7 +24,6 @@ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.naive_bayes import GaussianNB
 from sklearn.svm import SVC
 import joblib
-import matplotlib.pyplot as plt
 
 #--------------------
 # tunable-parameters

@@ -5,6 +5,7 @@ Created on Wed Jan 13 17:40:42 2021
 @author: Mas
 """
 # Importing the libraries
+'''
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import MinMaxScaler
 from skimage import feature
@@ -111,3 +112,4 @@ print ("accuracy = ", accuracy)
 cm = confusion_matrix(testLabelsGlobal, prediction)
 print (cm)
 plt.imshow(cm, cmap='binary')
+'''
