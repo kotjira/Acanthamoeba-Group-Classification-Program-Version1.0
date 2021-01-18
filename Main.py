@@ -192,7 +192,7 @@ def demo_photo_picker3(default_folder, default_pic):
             rescaled_feature = scaler.fit_transform([global_feature])
             prediction = clf.predict(global_feature.reshape(1,-1))[0]
             ans = prediction_table(prediction)
-            sg.popup("Your selected image is in that group:"+ans,title = "Classify",icon = icon_x_base64)
+            sg.popup("Your selected image is in group:"+ans,title = "Classify",icon = icon_x_base64)
     
             window.FindElement("image").Update(data=get_image_as_data(full_filename, 340, 340))
         
