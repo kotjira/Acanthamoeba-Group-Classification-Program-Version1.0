@@ -114,7 +114,7 @@ def demo_photo_picker3(default_folder, default_pic):
         ],
     ]
 
-    window = sg.Window('Acanthamoeba Group Classification Program',layout,icon="D:\project\Acanthamoeba Program\GUI\icon_program.ico") #.Layout(layout)
+    window = sg.Window('Acanthamoeba Group Classification Program',layout,icon="GUI\icon_program.ico") #.Layout(layout)
     
     while True:
         event, values = window.Read()
@@ -139,7 +139,7 @@ def demo_photo_picker3(default_folder, default_pic):
         if event == '-Classify-':
             warnings.filterwarnings('ignore')
             num_trees = 100
-            test_size = 0.30
+            test_size = 0.10
             seed      = 9
             train_path = "Dataset/Training"
             test_path  = "Dataset/Test"

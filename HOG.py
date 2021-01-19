@@ -140,7 +140,7 @@ warnings.filterwarnings('ignore')
 # tunable-parameters
 #--------------------
 num_trees = 100
-test_size = 0.30
+test_size = 0.10
 seed      = 9
 train_path = "Dataset/Training"
 test_path  = "Dataset/Test"
