@@ -4,7 +4,6 @@ Created on Wed Jan 13 17:40:42 2021
 
 @author: Mas
 """
-
 # Importing the libraries
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import MinMaxScaler
@@ -44,7 +43,7 @@ import matplotlib.pyplot as plt
 # tunable-parameters
 #--------------------
 num_trees = 100
-test_size = 0.30
+test_size = 0.10
 seed      = 9
 train_path = "Dataset/Training"
 test_path  = "Dataset/Test"
@@ -84,8 +83,9 @@ print("[STATUS] training started...")
 (trainDataGlobal, testDataGlobal, trainLabelsGlobal, testLabelsGlobal) = train_test_split(np.array(global_features),
                                                                                           np.array(global_labels),
                                                                                           test_size=test_size,
-                                                                                          random_state=seed)
+                                                                                          random_state=seed) #ลองแกะโค้ดหา ID
 
+print()
 print("[STATUS] splitted train and test data...")
 print("Train data  : {}".format(trainDataGlobal.shape))
 print("Test data   : {}".format(testDataGlobal.shape))

@@ -112,7 +112,6 @@ print("[STATUS] training labels encoded...")
 scaler            = MinMaxScaler(feature_range=(0, 1))
 rescaled_features = scaler.fit_transform(global_features)
 print("[STATUS] feature vector normalized...")
-
 print("[STATUS] target labels: {}".format(target))
 print("[STATUS] target labels shape: {}".format(target.shape))
 
@@ -140,7 +139,7 @@ warnings.filterwarnings('ignore')
 # tunable-parameters
 #--------------------
 num_trees = 100
-test_size = 0.10
+test_size = 0.3
 seed      = 9
 train_path = "Dataset/Training"
 test_path  = "Dataset/Test"
