@@ -1,13 +1,16 @@
 #-----------------------------------
 # PARAMETER FEATURE
 #-----------------------------------
-
 # Importing the libraries
 import copy
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import cv2 ,os
+import h5py
+
+#%matplotlib inline
+
 
 # Loading the image
 dir_images = "./Dataset/Training/G1"
@@ -23,7 +26,7 @@ for imgnm in imgs:
     # Canny Edge Detection
     canny_image = cv2.Canny(gaussain,100,10)
 
-
+   
     # Parameters for HOG descriptor
     cell_size = (6, 6)
     num_cells_per_block = (2, 2)
@@ -49,6 +52,16 @@ for imgnm in imgs:
     win_size = (x_cell * cell_size[0],
             y_cell * cell_size[1])
 
+    # Printing the parameters
+    print("==========================================")
+    print("| HOG Descriptor Parameters:")
+    print("| ")
+    print("| ==> Window size: ", win_size)
+    print("| ==> Cell size: ", cell_size)
+    print("| ==> Block size: ", block_size)
+    print("| ==> Block stride of: ", block_stride)
+    print("| ==> Number of bins: ", num_bins)
+    print("==========================================\n")
 
     # Setting the parameters of HOG descriptor
     HOG = cv2.HOGDescriptor(win_size,                       # Size of detection window in pixels 
@@ -64,34 +77,17 @@ for imgnm in imgs:
     # Compute HOG descriptor for gray scale image
     HOG_descriptor = HOG.compute(canny_image) 
 
-    #global_feature = np.hstack(HOG_descriptor)
+    print("==========================================")
+    print("| ==> HOG Descriptor's shape: ", HOG_descriptor.shape)
+    print("==========================================")
+    print("| ==> HOG Features: ", HOG_descriptor)
+    print("==========================================\n")
 
-    #global_features.append(global_feature)
-
-    #print("[STATUS] feature vector size {}".format(np.array(global_features).shape))
-    
-    # get the overall training label size
-    #print("[STATUS] training Labels {}".format(np.array(labels).shape))
-
-    
     for savetxt in imgs:
-        save = ("output"+str(imgnm)+".txt",HOG_descriptor, '%10.14f')
-        #np.save("outputall.txt",save ,'%10.14f')
-       
-#h5f_data = h5py.File('hy.h5', 'w')
-#h5f_data.create_dataset('dataset_1', data=np.array(global_feature))
-#h5f_data.close()
-
-#print("[STATUS] feature vector size {}".format(np.array(global_features).shape))
-    
-    # get the overall training label size
-#print("[STATUS] training Labels {}".format(np.array(labels).shape))
+        save = np.savetxt("output"+str(imgnm)+".txt",HOG_descriptor , '%f')
+        #np.savez("outputall.txt", save , '%f')
 
 
-        #np.savetxt('output'+'%d'%i + '.txt' , HOG_descriptor , '%f')
-        
-
-
-#print("[STATUS] end of training..")
+print("[STATUS] end of training..")
 
 
