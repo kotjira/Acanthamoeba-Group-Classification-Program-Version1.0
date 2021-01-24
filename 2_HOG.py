@@ -18,11 +18,8 @@ image = cv2.imread("Dataset/Test/test1.jpg")
 #resize
 size = cv2.resize(image,(100,100))
 
-# Converting BGR to RGB
-image = cv2.cvtColor(size, cv2.COLOR_BGR2RGB)
-
 # Converting RGB to Gray scale
-gray_image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+gray_image = cv2.cvtColor(size, cv2.COLOR_RGB2GRAY)
 
 #Gaussain Blur Deleted noise
 gaussain = cv2.GaussianBlur(gray_image,(5,5),0)

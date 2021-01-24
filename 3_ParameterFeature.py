@@ -1,5 +1,5 @@
 #-----------------------------------
-# PARAMETER FEATURE
+# PARAMETER FEATURE 
 #-----------------------------------
 # Importing the libraries
 import copy
@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import cv2 ,os
 import h5py
-
 
 # Loading the image
 dir_images = "./Dataset/Training/G1"
@@ -62,7 +61,7 @@ for imgnm in imgs:
     print("==========================================\n")
 
     # Setting the parameters of HOG descriptor
-    HOG = cv2.HOGDescriptor(win_size,                       # Size of detection window in pixels 
+    HOG = cv2.HOGDescriptor(win_size,                   # Size of detection window in pixels 
                         block_size,                     # Defines how many cells are in each block. 
                         block_stride,                   # Defines the distance between adjecent blocks
                         cell_size,                      # Determines the size fo your cell
@@ -84,7 +83,6 @@ for imgnm in imgs:
     for savetxt in imgs:
         save = np.savetxt("output"+str(imgnm)+".txt",HOG_descriptor , '%f')
         #np.savez("outputall.txt", save , '%f')
-
 
 print("[STATUS] end of training..")
 
