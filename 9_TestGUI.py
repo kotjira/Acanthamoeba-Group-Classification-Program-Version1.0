@@ -115,7 +115,7 @@ def demo_photo_picker3(default_folder, default_pic):
         ],
     ]
 
-    window = sg.Window('Acanthamoeba Group Classification Program',layout,icon="GUI\icon_program.ico") #.Layout(layout)
+    window = sg.Window('Acanthamoeba Group Classification Program',layout,icon="GUI\iconProgram.ico") #.Layout(layout)
     
     while True:
         event, values = window.Read()
