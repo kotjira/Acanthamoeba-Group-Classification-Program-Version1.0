@@ -9,8 +9,6 @@ import matplotlib.patches as patches
 import cv2 ,os
 import h5py
 
-#%matplotlib inline
-
 
 # Loading the image
 dir_images = "./Dataset/Training/G1"
