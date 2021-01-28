@@ -113,5 +113,5 @@ print("after hyper-parameter tuning: ", grid.best_estimator_)
 grid_predictions = grid.predict(testDataGlobal) 
 
 # print classification report 
-print(classification_report(testLabelsGlobal, grid_predictions)) 
+print(classification_report(grid_predictions, testLabelsGlobal)) 
 

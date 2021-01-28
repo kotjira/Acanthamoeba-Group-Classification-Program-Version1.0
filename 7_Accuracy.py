@@ -93,9 +93,9 @@ clf.fit(trainDataGlobal, trainLabelsGlobal)
 prediction = clf.predict(testDataGlobal)
 print(prediction)
     
-accuracy = accuracy_score(testLabelsGlobal, prediction)
+accuracy = accuracy_score(prediction, testLabelsGlobal)
 print ("accuracy = ", accuracy)
-cm = confusion_matrix(testLabelsGlobal, prediction)
+cm = confusion_matrix(prediction, testLabelsGlobal)
 print (cm)
 plt.imshow(cm, cmap='binary')
 
