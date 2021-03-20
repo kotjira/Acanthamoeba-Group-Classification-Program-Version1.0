@@ -131,7 +131,7 @@ for file in glob.glob(test_path + "/*.jpg"):
     prediction = clf.predict(global_feature.reshape(1,-1))[0]
     print(prediction)
     # show predicted label on image
-    cv2.putText(image, train_labels[prediction], (20,30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0,255,255), 3)
+    cv2.putText(image, train_labels[prediction], (20,30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0,0,255), 3)
 
     # display the output image
     
